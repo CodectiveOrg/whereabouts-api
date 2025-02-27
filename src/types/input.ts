@@ -12,4 +12,5 @@ export type Input = {
   restaurantWorkHours: InputWorkHours[];
   attractionTag: InputTag[];
   phone: string;
+  url: string;
 };

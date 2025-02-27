@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 
-import { Attraction } from "../types/attraction";
+import { NormalizedAttraction } from "../types/attraction";
 import { AttractionTag } from "../types/attraction-tag";
 import {
   AttractionTime,
@@ -12,7 +12,7 @@ import { InputTag } from "../types/input-tag";
 import { InputTime, InputWorkHours } from "../types/input-work-hours";
 
 const INPUT_FILE_PATH = "input/data.json";
-const OUTPUT_FILE_PATH = "output/db.json";
+const OUTPUT_FILE_PATH = "output/normalized.json";
 
 async function main(): Promise<void> {
   const input = await loadInput();
@@ -26,7 +26,7 @@ async function loadInput(): Promise<Input[]> {
   return JSON.parse(content);
 }
 
-function normalizeInput(items: Input[]): Attraction[] {
+function normalizeInput(items: Input[]): NormalizedAttraction[] {
   return items.map((item) => ({
     id: item.id,
     title: item.title,
@@ -38,6 +38,7 @@ function normalizeInput(items: Input[]): Attraction[] {
     workHours: normalizeWorkHours(item.restaurantWorkHours),
     tags: normalizeTags(item.attractionTag),
     phone: item.phone,
+    url: item.url,
   }));
 }
 
@@ -93,7 +94,7 @@ function pad2(value: number): string {
   return value.toString().padStart(2, "0");
 }
 
-async function saveOutput(attractions: Attraction[]): Promise<void> {
+async function saveOutput(attractions: NormalizedAttraction[]): Promise<void> {
   const content = JSON.stringify({ attractions }, null, 2);
   await fs.writeFile(OUTPUT_FILE_PATH, content);
 }

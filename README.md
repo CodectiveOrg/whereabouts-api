@@ -21,7 +21,7 @@
 
 ### Normalizing
 
-Normalizing will `db.json` file inside `output` folder.
+Normalizing will `normalized.json` file inside `output` folder.
 Its content is almost identical as `data.json` but it has a few differences.
 For example field names or object structures may change.
 Overall it's just a simple map that cleans up data a little bit.
@@ -30,10 +30,14 @@ Overall it's just a simple map that cleans up data a little bit.
 
 ### Scraping
 
-Scraping will put additional content to the normalized data.
-So its necessary to run normalize script before scraping.
+Scraping will gather additional content from the website.
 
-The scrape data can be used in PDP.
+It will generate a dedicated file for each attraction inside `output/scraped` folder.
+This way if some error happens in the middle of the scraping, previous results will be safe.
+Also, if you run scrape script again, attractions that are already scraped, won't be scraped again.
+
+It's necessary to run normalize script before scraping,
+because scrapers read id and url from `normalized.json` file.
 
 1. Run `npm run scrape`.
 

@@ -1,7 +1,7 @@
 import { AttractionWorkHours } from "./attraction-work-hours";
 import { AttractionTag } from "./attraction-tag";
 
-export type Attraction = {
+export type NormalizedAttraction = {
   id: number;
   title: string;
   description: string;
@@ -12,4 +12,13 @@ export type Attraction = {
   workHours: AttractionWorkHours[];
   tags: AttractionTag[];
   phone: string;
+  url: string;
 };
+
+export type ScrapedAttraction = {
+  address: string;
+  carousel: string[];
+  body: string;
+};
+
+export type Attraction = NormalizedAttraction & ScrapedAttraction;
