@@ -1,5 +1,5 @@
 {
-  "name": "whereabouts-api",
+  "name": "whereabouts-data-generator",
   "version": "1.0.0",
   "scripts": {
     "dev": "tsx watch src/main.ts",

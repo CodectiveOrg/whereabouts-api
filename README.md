@@ -1,4 +1,4 @@
-# Whereabouts API
+# Whereabouts Data Generator
 
 ## How to use?
 
