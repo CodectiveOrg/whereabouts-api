@@ -11,8 +11,8 @@ import { AddressScraper } from "./scrapers/address.scraper";
 import { CarouselScraper } from "./scrapers/carousel.scraper";
 import { BodyScraper } from "./scrapers/body.scraper";
 
-import { isAlreadyScraped, saveScraped } from "./utils/io.utils";
-import { logResult, Result } from "./utils/log.utils";
+import { isAlreadyScraped, saveScraped } from "../utils/io.utils";
+import { logResult, Result } from "../utils/log.utils";
 
 const BASE_URL = "https://www.kojaro.com";
 

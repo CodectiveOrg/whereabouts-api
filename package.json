@@ -9,7 +9,8 @@
     "preview": "node dist/main.js",
     "normalize": "tsx src/scripts/normalize.ts",
     "scrape": "tsx src/scripts/scrape/main.ts",
-    "db": " json-server output/db.json"
+    "merge": "tsx src/scripts/merge.ts",
+    "db": "json-server output/db.json"
   },
   "devDependencies": {
     "@types/node": "^20.17.16",

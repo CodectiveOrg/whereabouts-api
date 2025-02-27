@@ -1,6 +1,6 @@
 import fs, { constants } from "node:fs/promises";
 
-import { ScrapedAttraction } from "../../../types/attraction";
+import { ScrapedAttraction } from "../../types/attraction";
 
 const SCRAPED_FOLDER_PATH = "output/scraped";
 
@@ -11,6 +11,12 @@ export async function isAlreadyScraped(id: number): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+export async function loadScraped(id: number): Promise<ScrapedAttraction> {
+  const buffer = await fs.readFile(idToPath(id));
+  const content = buffer.toString();
+  return JSON.parse(content);
 }
 
 export async function saveScraped(

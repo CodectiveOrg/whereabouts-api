@@ -41,6 +41,15 @@ because scrapers read id and url from `normalized.json` file.
 
 1. Run `npm run scrape`.
 
+### Merging
+
+After running normalize script and then scrape script,
+It's time to merge the results of these scripts together.
+
+This will generate a `db.json` file, which you can use to populate the database with.
+
+1. Run `npm run merge`.
+
 ### Simple Mock API
 
 1. Run `npm run db`.
