@@ -27,8 +27,6 @@ For example field names or object structures may change.
 Overall it's just a simple map that cleans up data a little bit.
 
 1. Run `npm run normalize`.
-2. Run `npm run db`.
-3. Visit `http://localhost:3000/`
 
 ### Scraping
 
@@ -38,3 +36,8 @@ So its necessary to run normalize script before scraping.
 The scrape data can be used in PDP.
 
 1. Run `npm run scrape`.
+
+### Simple Mock API
+
+1. Run `npm run db`.
+2. Visit `http://localhost:3000/`
